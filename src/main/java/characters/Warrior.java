@@ -11,6 +11,10 @@ public class Warrior extends Character {
         this.weapon = weapon;
     }
 
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
     public void changeWeapon(Weapon chosenWeapon){
         this.weapon = chosenWeapon;
     }

@@ -18,14 +18,18 @@ public class PlayerTest {
     Warrior warrior;
     Room room;
     Enemy enemy;
+    Enemy strongEnemy;
+    Object object;
 
 
     @Before
     public void before(){
         warrior = new Warrior(WarriorType.DWARF, Weapon.AXE);
         enemy = new Enemy(EnemyType.VAMPIRE);
-        room = new Room(enemy);
+        strongEnemy = new Enemy(EnemyType.GOGMAGOG);
+        room = new Room();
         player = new Player(warrior, room);
+        room.addEnemy(enemy);
     }
 
     @Test
@@ -34,10 +38,20 @@ public class PlayerTest {
     }
 
     @Test
+    public void canFightToDeath(){
+        player.fightToTheDeath(enemy);
+        assertEquals(0, enemy.getHealth());
+    }
+
+    @Test
+    public void canGetPosition(){
+        assertEquals(room, player.getPosition());
+    }
+
+    @Test
     public void canAttack(){
         this.player.fightToTheDeath(room.getEnemy());
         assertEquals(0, this.enemy.getHealth());
-
     }
 
 

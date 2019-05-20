@@ -17,6 +17,7 @@ public class WarriorTest {
         warrior = new Warrior(WarriorType.BARBARIAN, Weapon.SWORD);
     }
 
+
     @Test
     public void canGetStartingHealth(){
         assertEquals(12, warrior.getStartingHealth());
@@ -30,6 +31,27 @@ public class WarriorTest {
     @Test
     public void canGetDefence(){
         assertEquals(0, warrior.getDefence());
+    }
+
+    @Test
+    public void canGetTotalAttackPotential(){
+        assertEquals(7, warrior.getAttackPotential());
+    }
+
+    @Test
+    public void canGetTotalDefencePotential(){
+        assertEquals(1, warrior.getDefencePotential());
+    }
+
+    @Test
+    public void canGetWeapon(){
+        assertEquals(Weapon.SWORD, warrior.getWeapon());
+    }
+
+    @Test
+    public void canChangeWeapon(){
+        warrior.changeWeapon(Weapon.AXE);
+        assertEquals(Weapon.AXE, warrior.getWeapon());
     }
 
 

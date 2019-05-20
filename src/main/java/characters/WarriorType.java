@@ -28,4 +28,5 @@ public enum WarriorType implements IExist {
     public int getDefence() {
         return defence;
     }
+
 }

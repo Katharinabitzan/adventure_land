@@ -13,6 +13,11 @@ public class Player {
         this.position = position;
     }
 
+
+    public int getHealth() {
+        return health;
+    }
+
     public void changeHealth(int healthAmount){
         this.health += healthAmount;
     }
@@ -47,9 +52,6 @@ public class Player {
         return character;
     }
 
-    public int getHealth() {
-        return health;
-    }
 
     public Room getPosition() {
         return position;

@@ -12,6 +12,10 @@ public class Healer extends Character {
         this.healingTool = potion;
     }
 
+    public HealingTool getHealingTool() {
+        return healingTool;
+    }
+
     public void changeSpell(HealingTool healingTool){
         this.healingTool = healingTool;
     }
